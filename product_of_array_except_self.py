@@ -5,6 +5,9 @@ def productExceptSelf(nums: list) -> list :
     n = len(nums)
     output = [1]*n
     
+    # We first put the product into the output,
+    # then we update the product using the current index. 
+
     # left product
     left = 1
     for i in range(n):
