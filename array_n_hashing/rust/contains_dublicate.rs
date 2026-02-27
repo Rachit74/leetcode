@@ -7,14 +7,20 @@ fn main() {
     println!("{}", res);
 }
 
-fn contains_dublicate(nums: Vec<i32>) -> bool {
-    let mut set: HashSet<i32> = HashSet::new();
+// fn contains_dublicate(nums: Vec<i32>) -> bool {
+//     let mut set: HashSet<i32> = HashSet::new();
 
-    for num in nums {
-        if set.contains(&num) {
-            return false
-        }
-        set.insert(num);
-    }
-    return true
+//     for num in nums {
+//         if set.contains(&num) {
+//             return true
+//         }
+//         set.insert(num);
+//     }
+//     return false
+// }
+
+fn contains_dublicate(nums: Vec<i32>) -> bool {
+    let set: HashSet<i32> = nums.iter().cloned().collect();
+
+    return set.len() != nums.len()
 }
